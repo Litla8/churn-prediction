@@ -1,0 +1,161 @@
+{
+  "rows": 10000,
+  "overall_churn_rate": 0.2038,
+  "leakage_candidates": {
+    "Complain": 0.9957
+  },
+  "segment_churn_tables": {
+    "Geography": [
+      {
+        "Geography": "France",
+        "customers": 5014,
+        "churn_rate": 0.16174710809732748
+      },
+      {
+        "Geography": "Germany",
+        "customers": 2509,
+        "churn_rate": 0.32443204463929853
+      },
+      {
+        "Geography": "Spain",
+        "customers": 2477,
+        "churn_rate": 0.1667339523617279
+      }
+    ],
+    "Gender": [
+      {
+        "Gender": "Female",
+        "customers": 4543,
+        "churn_rate": 0.2507153863086066
+      },
+      {
+        "Gender": "Male",
+        "customers": 5457,
+        "churn_rate": 0.1647425325270295
+      }
+    ],
+    "NumOfProducts": [
+      {
+        "NumOfProducts": 1,
+        "customers": 5084,
+        "churn_rate": 0.27714398111723054
+      },
+      {
+        "NumOfProducts": 2,
+        "customers": 4590,
+        "churn_rate": 0.07603485838779957
+      },
+      {
+        "NumOfProducts": 3,
+        "customers": 266,
+        "churn_rate": 0.8270676691729323
+      },
+      {
+        "NumOfProducts": 4,
+        "customers": 60,
+        "churn_rate": 1.0
+      }
+    ],
+    "IsActiveMember": [
+      {
+        "IsActiveMember": 0,
+        "customers": 4849,
+        "churn_rate": 0.26871519901010515
+      },
+      {
+        "IsActiveMember": 1,
+        "customers": 5151,
+        "churn_rate": 0.14269073966220153
+      }
+    ],
+    "AgeBand": [
+      {
+        "AgeBand": "18-30",
+        "customers": 1968,
+        "churn_rate": 0.07520325203252033
+      },
+      {
+        "AgeBand": "31-40",
+        "customers": 4451,
+        "churn_rate": 0.1210963828353179
+      },
+      {
+        "AgeBand": "41-50",
+        "customers": 2320,
+        "churn_rate": 0.3396551724137931
+      },
+      {
+        "AgeBand": "51-60",
+        "customers": 797,
+        "churn_rate": 0.562107904642409
+      },
+      {
+        "AgeBand": "60+",
+        "customers": 464,
+        "churn_rate": 0.2478448275862069
+      }
+    ],
+    "Card Type": [
+      {
+        "Card Type": "DIAMOND",
+        "customers": 2507,
+        "churn_rate": 0.2177901874750698
+      },
+      {
+        "Card Type": "GOLD",
+        "customers": 2502,
+        "churn_rate": 0.1926458832933653
+      },
+      {
+        "Card Type": "PLATINUM",
+        "customers": 2495,
+        "churn_rate": 0.2036072144288577
+      },
+      {
+        "Card Type": "SILVER",
+        "customers": 2496,
+        "churn_rate": 0.20112179487179488
+      }
+    ],
+    "BalanceStatus": [
+      {
+        "BalanceStatus": "has balance",
+        "customers": 6383,
+        "churn_rate": 0.2409525301582328
+      },
+      {
+        "BalanceStatus": "zero balance",
+        "customers": 3617,
+        "churn_rate": 0.13823610727121924
+      }
+    ],
+    "Satisfaction Score": [
+      {
+        "Satisfaction Score": 1,
+        "customers": 1932,
+        "churn_rate": 0.20031055900621117
+      },
+      {
+        "Satisfaction Score": 2,
+        "customers": 2014,
+        "churn_rate": 0.217974180734856
+      },
+      {
+        "Satisfaction Score": 3,
+        "customers": 2042,
+        "churn_rate": 0.19637610186092067
+      },
+      {
+        "Satisfaction Score": 4,
+        "customers": 2008,
+        "churn_rate": 0.2061752988047809
+      },
+      {
+        "Satisfaction Score": 5,
+        "customers": 2004,
+        "churn_rate": 0.19810379241516965
+      }
+    ]
+  },
+  "missing_values": 0
+}

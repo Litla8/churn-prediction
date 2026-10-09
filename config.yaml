@@ -1,0 +1,13 @@
+# Optional overrides: python -m churn.pipeline --config config.yaml
+# Any key left out falls back to the defaults in churn/config.py.
+paths:
+  raw_data: data/raw/Customer-Churn-Records.csv
+  models_dir: models
+  reports_dir: reports
+train:
+  cv_folds: 5
+  log_level: INFO
+cost:            # replace with the bank's real numbers
+  customer_value: 1000.0
+  offer_cost: 100.0
+  retention_success_rate: 0.3

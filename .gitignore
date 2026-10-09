@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+.pytest_cache/
+# Data and generated artifacts stay out of Git (re-create them by re-running the pipeline)
+data/raw/*
+!data/raw/.gitkeep
+models/*
+!models/.gitkeep
+reports/*
+!reports/.gitkeep

@@ -1,0 +1,208 @@
+{
+  "selected_model": "hist_gb",
+  "random_state": 42,
+  "decision_threshold": 0.67,
+  "cv_results": [
+    {
+      "model": "hist_gb",
+      "cv_roc_auc_mean": 0.8650676058353817,
+      "cv_roc_auc_std": 0.009907082937715356,
+      "cv_pr_auc_mean": 0.7009796174004342,
+      "cv_pr_auc_std": 0.030338361055493406,
+      "cv_recall_mean": 0.7433296528033371,
+      "cv_recall_std": 0.011141592158535977,
+      "cv_f1_mean": 0.6154582482699935,
+      "cv_f1_std": 0.0171892904350155
+    },
+    {
+      "model": "random_forest",
+      "cv_roc_auc_mean": 0.8581605170066806,
+      "cv_roc_auc_std": 0.01200084126237635,
+      "cv_pr_auc_mean": 0.6753274069694608,
+      "cv_pr_auc_std": 0.02659443628263847,
+      "cv_recall_mean": 0.5890344742976322,
+      "cv_recall_std": 0.024133829390835956,
+      "cv_f1_mean": 0.6111123839269152,
+      "cv_f1_std": 0.02841260150718742
+    },
+    {
+      "model": "logreg",
+      "cv_roc_auc_mean": 0.7664287366349095,
+      "cv_roc_auc_std": 0.006545379035128905,
+      "cv_pr_auc_mean": 0.4593594679655738,
+      "cv_pr_auc_std": 0.013794136099349628,
+      "cv_recall_mean": 0.6858520426941479,
+      "cv_recall_std": 0.018716754041430403,
+      "cv_f1_mean": 0.49149753781829403,
+      "cv_f1_std": 0.011288084554924914
+    }
+  ],
+  "test_metrics_at_business_threshold": {
+    "threshold": 0.67,
+    "roc_auc": 0.8731621068304486,
+    "pr_auc": 0.7152614046789937,
+    "precision": 0.6357388316151202,
+    "recall": 0.6045751633986928,
+    "f1": 0.6197654941373533,
+    "accuracy": 0.8486666666666667,
+    "tp": 185,
+    "fp": 106,
+    "fn": 121,
+    "tn": 1088
+  },
+  "test_metrics_at_0.5": {
+    "threshold": 0.5,
+    "roc_auc": 0.8731621068304486,
+    "pr_auc": 0.7152614046789937,
+    "precision": 0.5315315315315315,
+    "recall": 0.7712418300653595,
+    "f1": 0.6293333333333334,
+    "accuracy": 0.8146666666666667,
+    "tp": 236,
+    "fp": 208,
+    "fn": 70,
+    "tn": 986
+  },
+  "business_impact_test_set": {
+    "net_benefit_model": 26400.0,
+    "net_benefit_offer_everyone": -58200.0,
+    "net_benefit_do_nothing": 0.0,
+    "customers_flagged": 291,
+    "customers_in_test_set": 1500
+  },
+  "meets_pdf_targets": {
+    "roc_auc>0.84": true,
+    "recall>0.75_at_business_threshold": false
+  },
+  "hyperparameters": {
+    "categorical_features": "from_dtype",
+    "class_weight": "balanced",
+    "early_stopping": true,
+    "interaction_cst": null,
+    "l2_regularization": 1.0,
+    "learning_rate": 0.05,
+    "loss": "log_loss",
+    "max_bins": 255,
+    "max_depth": null,
+    "max_features": 1.0,
+    "max_iter": 400,
+    "max_leaf_nodes": 15,
+    "min_samples_leaf": 20,
+    "monotonic_cst": null,
+    "n_iter_no_change": 10,
+    "random_state": 42,
+    "scoring": "loss",
+    "tol": 1e-07,
+    "validation_fraction": 0.1,
+    "verbose": 0,
+    "warm_start": false
+  },
+  "config": {
+    "paths": {
+      "raw_data": "/mnt/user-data/uploads/Customer-Churn-Records.csv",
+      "models_dir": "/tmp/run_clean/models",
+      "reports_dir": "/tmp/run_clean/reports"
+    },
+    "data": {
+      "target": "Exited",
+      "id_columns": [
+        "RowNumber",
+        "CustomerId",
+        "Surname"
+      ],
+      "dedupe_key": "CustomerId",
+      "leakage_columns": [
+        "Complain"
+      ],
+      "categorical_columns": [
+        "Geography",
+        "Gender",
+        "Card Type"
+      ],
+      "numeric_columns": [
+        "CreditScore",
+        "Age",
+        "Tenure",
+        "Balance",
+        "NumOfProducts",
+        "HasCrCard",
+        "IsActiveMember",
+        "EstimatedSalary",
+        "Satisfaction Score",
+        "Point Earned"
+      ],
+      "val_size": 0.15,
+      "test_size": 0.15
+    },
+    "train": {
+      "random_state": 42,
+      "cv_folds": 5,
+      "models": [
+        "logreg",
+        "random_forest",
+        "hist_gb",
+        "xgboost",
+        "lightgbm"
+      ],
+      "early_stopping_rounds": 50,
+      "log_level": "INFO",
+      "target_roc_auc": 0.84,
+      "target_recall": 0.75
+    },
+    "cost": {
+      "customer_value": 1000.0,
+      "offer_cost": 100.0,
+      "retention_success_rate": 0.3
+    },
+    "model_params": {
+      "logreg": {
+        "C": 1.0,
+        "max_iter": 2000,
+        "class_weight": "balanced"
+      },
+      "random_forest": {
+        "n_estimators": 400,
+        "min_samples_leaf": 5,
+        "max_features": "sqrt",
+        "class_weight": "balanced_subsample",
+        "n_jobs": -1
+      },
+      "hist_gb": {
+        "learning_rate": 0.05,
+        "max_iter": 400,
+        "max_leaf_nodes": 15,
+        "l2_regularization": 1.0,
+        "early_stopping": true,
+        "class_weight": "balanced"
+      },
+      "xgboost": {
+        "n_estimators": 800,
+        "learning_rate": 0.03,
+        "max_depth": 4,
+        "subsample": 0.8,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 3,
+        "eval_metric": "auc",
+        "tree_method": "hist",
+        "n_jobs": -1
+      },
+      "lightgbm": {
+        "n_estimators": 800,
+        "learning_rate": 0.03,
+        "num_leaves": 15,
+        "subsample": 0.8,
+        "subsample_freq": 1,
+        "colsample_bytree": 0.8,
+        "min_child_samples": 20,
+        "n_jobs": -1,
+        "verbose": -1
+      }
+    }
+  },
+  "environment": {
+    "python": "3.12.3",
+    "sklearn": "1.8.0",
+    "pandas": "3.0.2",
+    "numpy": "2.4.4"
+  }
+}
