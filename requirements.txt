@@ -7,3 +7,5 @@ matplotlib>=3.8
 joblib>=1.3
 pyyaml>=6.0
 pytest>=8.0
+shap>=0.45
+streamlit>=1.35

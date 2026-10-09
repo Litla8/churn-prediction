@@ -10,7 +10,9 @@ model. Including it gives a meaningless ROC-AUC of ~1.0 (reproduce with `--inclu
 
 ## Project layout
 ```
-churn/            config.py data.py features.py models.py train.py evaluate.py pipeline.py eda.py
+churn/            config.py data.py features.py models.py train.py evaluate.py pipeline.py
+                  eda.py explain.py scoring.py
+app/              streamlit_app.py (single-customer + batch scoring, SHAP reasons)
 tests/            pytest suite (synthetic fixtures, mocked data loading)
 config.yaml       optional overrides (paths, CV folds, business costs, hyperparameters)
 data/raw/         put Customer-Churn-Records.csv here (git-ignored)
@@ -24,6 +26,8 @@ python -m venv .venv
 pip install -r requirements.txt
 python -m churn.eda          # figures + eda_summary.json in reports/
 python -m churn.pipeline     # CV, final model, threshold, plots, metrics.json
+python -m churn.explain      # SHAP plots, shap_importance.csv, churn_drivers.md
+streamlit run app/streamlit_app.py   # interactive scoring app
 pytest -q                    # run the tests
 ```
 Useful flags: `--config config.yaml`, `--data-path`, `--log-level DEBUG`, `--include-complain`.
@@ -44,5 +48,12 @@ Useful flags: `--config config.yaml`, `--data-path`, `--log-level DEBUG`, `--inc
 A flagged customer gets a 100 offer; a real churner is saved with probability 0.3, worth 1000.
 Net benefit = TP x 0.3 x 1000 - flagged x 100.
 
+## Explainability and app
+`python -m churn.explain` explains the saved model on held-out test rows with a
+model-agnostic SHAP permutation explainer (works for every model in the comparison). It writes
+the beeswarm and importance plots, `reports/shap_importance.csv` and a plain-English
+`reports/churn_drivers.md`. The Streamlit app scores one customer or an uploaded CSV, shows the
+risk tier against the cost-optimal threshold, rule-based retention ideas and a per-customer SHAP chart.
+
 ## Next steps for this project
-SHAP explainability, Optuna tuning, Streamlit app, Docker/FastAPI, 5-slide summary.
+Optuna tuning, Docker/FastAPI, 5-slide summary.
