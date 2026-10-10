@@ -1,0 +1,16 @@
+.venv
+.git
+.github
+__pycache__
+.pytest_cache
+data
+notebooks
+sample_run
+docs
+tests
+app
+reports/figures
+reports/*.csv
+reports/eda_summary.json
+reports/churn_drivers.md
+models/shap_background.csv

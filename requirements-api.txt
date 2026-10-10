@@ -1,0 +1,12 @@
+# Runtime dependencies for the Docker image / API only.
+# IMPORTANT: pin scikit-learn (and ideally pandas, numpy) to the versions you trained with.
+# Print them with:  pip freeze | Select-String "scikit-learn|pandas|numpy|xgboost|lightgbm"
+numpy>=1.26
+pandas>=2.2
+scikit-learn==1.9.1
+xgboost>=2.0
+lightgbm>=4.3
+joblib>=1.3
+pyyaml>=6.0
+fastapi>=0.110
+uvicorn[standard]>=0.29

@@ -3,10 +3,20 @@ __pycache__/
 .venv/
 .ipynb_checkpoints/
 .pytest_cache/
-# Data and generated artifacts stay out of Git (re-create them by re-running the pipeline)
+
+# Raw data stays out of Git (download it from Kaggle).
 data/raw/*
 !data/raw/.gitkeep
+
+# Generated artifacts are ignored, except the ones needed to run the app/API without retraining.
 models/*
 !models/.gitkeep
+!models/churn_pipeline.joblib
+!models/shap_background.csv
 reports/*
 !reports/.gitkeep
+!reports/metrics.json
+!reports/churn_drivers.md
+!reports/shap_importance.csv
+!reports/eda_summary.json
+!reports/figures/
