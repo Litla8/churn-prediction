@@ -3,7 +3,7 @@
 # Print them with:  pip freeze | Select-String "scikit-learn|pandas|numpy|xgboost|lightgbm"
 numpy>=1.26
 pandas>=2.2
-scikit-learn==1.9.1
+scikit-learn>=1.4
 xgboost>=2.0
 lightgbm>=4.3
 joblib>=1.3
