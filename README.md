@@ -6,7 +6,7 @@ An end-to-end machine learning project that predicts which bank customers are li
 why, and turns the prediction into an action through a business-cost decision threshold. It ships as a
 tested Python package, a Streamlit dashboard and a FastAPI/Docker scoring service.
 
-![Scoring one customer with SHAP reasons](docs/images/SHAP_bars_.png)
+![Scoring one customer with SHAP reasons](docs/images/SHAP_bars.png)
 
 ## The problem
 
