@@ -1,5 +1,7 @@
 # Bank Customer Churn Prediction
 
+**Live demo:** https://bank-customer-churn-scorer.streamlit.app/
+
 [![tests](https://github.com/Litla8/churn-prediction/actions/workflows/tests.yml/badge.svg)](https://github.com/Litla8/churn-prediction/actions/workflows/tests.yml)
 
 An end-to-end machine learning project that predicts which bank customers are likely to leave, explains
